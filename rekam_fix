@@ -1,0 +1,9 @@
+#!/bin/bash -x
+
+INRES="1366x768"
+
+ffmpeg \
+-f pulse -ac 1 -ar 44100 -i alsa_input.pci-0000_00_14.2.analog-stereo \
+-f x11grab -framerate 24 -s "$INRES" -i :0.0+0,0 -f alsa -i default \
+-c:v libx264 -c:a libmp3lame \
+-threads 0 -strict -2 -f mp4 $1

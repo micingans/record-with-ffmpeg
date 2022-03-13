@@ -1,0 +1,11 @@
+#!/bin/bash -x
+
+INRES="1366x768"
+
+ffmpeg \
+-f pulse -ac 2 -ar 44100 -i alsa_output.pci-0000_00_14.2.analog-stereo.monitor \
+-filter_complex amix=inputs=1 \
+-f x11grab -framerate 24 -s "$INRES" -i :0.0+0,0 \
+-vcodec libx264 -preset veryfast \
+-acodec libmp3lame -ar 44100 -q:a 1 \
+-threads 0 -f flv $1
