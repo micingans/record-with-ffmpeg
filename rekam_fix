@@ -1,6 +1,6 @@
 #!/bin/bash -x
 
-INRES="1366x768"
+INRES="1366x768" #sama update resolution juga
 
 ffmpeg \
 -f pulse -ac 1 -ar 44100 -i alsa_input.pci-0000_00_14.2.analog-stereo \
