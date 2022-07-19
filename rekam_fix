@@ -1,5 +1,5 @@
 #!/bin/bash -x
-# usage: rekam namafile.format
+# usage: rekam namafile.flv
 
 INRES="1366x768"
 
