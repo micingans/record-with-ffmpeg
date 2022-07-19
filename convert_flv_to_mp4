@@ -1,0 +1,4 @@
+#!/bin/bash -x
+#usage: convert_flv_to_mp4 want_to_convert_file.flv output.mp4
+
+ffmpeg -i $1 -vcodec copy -acodec copy -f mp4 $2
