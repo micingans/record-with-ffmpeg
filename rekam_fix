@@ -1,5 +1,5 @@
 #!/bin/bash -x
-# usage: rekam format namafile.format
+# usage: rekam namafile.format
 
 INRES="1366x768"
 
