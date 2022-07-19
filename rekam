@@ -1,4 +1,5 @@
 #!/bin/bash -x
+#usage: rekam namafile.flv
 
 INRES="1366x768" #samakan dengan ukuran layar monitor
 
