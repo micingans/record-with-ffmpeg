@@ -1,9 +1,12 @@
 #!/bin/bash -x
+# usage: rekam format namafile.format
 
-INRES="1366x768" #sama update resolution juga
+INRES="1366x768"
 
 ffmpeg \
--f pulse -ac 1 -ar 44100 -i alsa_input.pci-0000_00_14.2.analog-stereo \
--f x11grab -framerate 24 -s "$INRES" -i :0.0+0,0 -f alsa -i default \
--c:v libx264 -c:a libmp3lame \
--threads 0 -strict -2 -f mp4 $1
+-f pulse -ac 2 -ar 44100 -i alsa_input.pci-0000_00_14.2.analog-stereo \
+-filter_complex amix=inputs=1 \
+-f x11grab -framerate 24 -s "$INRES" -i :0.0+0,0 \
+-vcodec libx264 -preset veryfast \
+-acodec libmp3lame -ar 44100 -q:a 1 \
+-threads 0 -f flv $1
