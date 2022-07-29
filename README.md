@@ -1,5 +1,5 @@
 # record-with-ffmpeg
-screenrecorder with ffmpeg
+screenrecorder with ffmpeg for linux
 
 # update
 converter flv to mp4 in bash code
